@@ -1,7 +1,7 @@
 import "./TaskCard.css";
 import Tag from './Tag';
 
-const TaskCard = ({title,tags}) =>{
+const TaskCard = ({title,tags,handleDelete , index}) =>{
 
     return(
         <article className='task_card'>
@@ -20,8 +20,8 @@ const TaskCard = ({title,tags}) =>{
                     }
 
                 </div>
-                <div className='task_delete'>
-                    <img src="" className='delete_icon' alt=''></img>
+                <div className='task_delete' onClick={() =>handleDelete(index)}>
+                    <img src="" className='delete_icon' alt=''></img>delete
                 </div>
             </div>
         </article>
