@@ -1,0 +1,57 @@
+.app_header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom:1px solid rgb(203, 199, 199);
+}
+
+.app_header > form {
+    width:40%;
+}
+
+.task_input::placeholder{
+    color:rgb(252, 252, 252)
+}
+.task_input{
+    font-size: 20px;
+    font-weight:500;
+    background: rgb(218, 211, 211);
+    color:black;
+    border:1px solid rgb(213, 209, 209);
+    border-radius: 5px;
+    padding: 8px 12px;
+    margin-bottom: 15px;
+    width: 100%;
+
+}
+
+.task_form_bottom_line {
+    display: flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-right:10px;
+    cursor:pointer;
+}
+
+.task_status{
+    font-size:16px;
+    font-weight:500;
+    border:1px solid rgb(203, 202, 202);
+    border-radius:5px;
+    width:120px;
+    height:40px;
+    padding:0 5px;
+}
+
+.task_submit{
+    font-size:16px;
+    font-weight:500;
+    background-color: rgb(18, 18, 199);
+    color:white;
+    border-radius:5px;
+    height:40px;
+    padding:3px 13px;
+    margin-left:10px;
+    border:none;
+    cursor:pointer;
+}
