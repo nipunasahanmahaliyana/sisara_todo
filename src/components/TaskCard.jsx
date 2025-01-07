@@ -1,7 +1,8 @@
-import "./TaskCard.css";
+import {React,useState} from 'react';
+import "../components/TaskCard.css";
 import Tag from './Tag';
 
-const TaskCard = ({title,tags,handleDelete , index}) =>{
+const TaskCard = ({title,tags,handleDelete ,handleUpdate, index}) =>{
 
     return(
         <article className='task_card'>
@@ -20,10 +21,14 @@ const TaskCard = ({title,tags,handleDelete , index}) =>{
                     }
 
                 </div>
+                <div className='task_delete' onClick={() =>handleUpdate(index)}>
+                    <img src="" className='delete_icon' alt='' ></img>update
+                </div>
                 <div className='task_delete' onClick={() =>handleDelete(index)}>
                     <img src="" className='delete_icon' alt=''></img>delete
                 </div>
             </div>
+     
         </article>
     );
 }

@@ -66,7 +66,7 @@ const checkTag = (tag) => {
                 <div>
                 <Tag tagName="HTML"  selectTag = {selectTag} selected = {checkTag("HTML")}/> 
                 <Tag tagName="CSS"  selectTag = {selectTag} selected = {checkTag("CSS")}/> 
-                <Tag tagName="JavaScript" selectTag = {selectTag} selected = {checkTag("JavaScript   ")}/> 
+                <Tag tagName="JavaScript" selectTag = {selectTag} selected = {checkTag("JavaScript")}/> 
                 </div>
 
                 <div>
