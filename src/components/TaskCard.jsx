@@ -1,17 +1,24 @@
 import "./TaskCard.css";
 import Tag from './Tag';
 
-const TaskCard = () =>{
+const TaskCard = ({title,tags}) =>{
 
     return(
         <article className='task_card'>
-            <p className='task_text'></p>
+            <p className='task_text'>{title}</p>
 
             <div className='task_card_bottom_line'>
                 <div className='task_card_tags'>
-                    <Tag tagName="HTML"/>
-                    <Tag tagName="CSS"/>
-                    <Tag tagName="HTML"/>
+
+                    {
+                        tags.map((tag,index) => (
+                            <Tag 
+                            key={index}
+                            tagName = {tag}
+                            selected={true}  />
+                        ))
+                    }
+
                 </div>
                 <div className='task_delete'>
                     <img src="" className='delete_icon' alt=''></img>
