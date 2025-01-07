@@ -6,6 +6,7 @@ const TaskForm = () => {
     const [task,setTask] = useState("");
 
     const handleTaskChange = (e) =>{
+        console.log(e.target.value);
         setTask(e.target.value);
     };
 
