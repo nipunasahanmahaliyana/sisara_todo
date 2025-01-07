@@ -1,9 +1,15 @@
 import './TaskColumn.css';
+import TaskCard from './TaskCard';
 
-const TaskColumn = () => {
+const TaskColumn = ({title,icon}) => {
     return(
         <section className='task_column'>
-            <h2 className='task_column_heading'><img className='task_column_image' src="" alt=""></img>To do</h2>
+            <h2 className='task_column_heading'>
+                <img className='task_column_image' src={icon} alt=""></img>
+                {title}
+                </h2>
+
+                <TaskCard />
         </section>
     );
 }

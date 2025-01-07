@@ -1,9 +1,9 @@
 import './Tag.css';
 
-const Tag = (props) => {
+const Tag = ({tagName}) => {
 
 return(
-    <button className='tag'>{props.name}</button>
+    <button className='tag'>{tagName}</button>
 );
 }
 
