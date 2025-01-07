@@ -3,6 +3,7 @@ import "./App.css";
 import TaskColumn from "./components/TaskColumn";
 import TaskForm from "../src/components/TaskFrom";
 import UpdateTaskModal from "./components/UpdateModal";
+import WelcomeScreen from "./components/Welcome";
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -29,6 +30,8 @@ function App() {
   };
 
   return (
+    <>
+    <WelcomeScreen></WelcomeScreen>
     <div className="app">
       <TaskForm setTasks={setTasks} />
       <main className="app_main">
@@ -65,6 +68,7 @@ function App() {
         />
       )}
     </div>
+    </>
   );
 }
 

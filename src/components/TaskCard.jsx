@@ -1,5 +1,5 @@
 import {React,useState} from 'react';
-import "../components/TaskCard.css";
+import './TaskCard.css';
 import Tag from './Tag';
 
 const TaskCard = ({title,tags,handleDelete ,handleUpdate, index}) =>{

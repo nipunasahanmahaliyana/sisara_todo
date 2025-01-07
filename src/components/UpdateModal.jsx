@@ -30,16 +30,7 @@ const UpdateTaskModal = ({ task, closeModal, handleUpdate }) => {
             onChange={handleChange}
             className="modal_input"
           />
-          <select
-            name="status"
-            value={taskData.status}
-            onChange={handleChange}
-            className="modal_select"
-          >
-            <option value="todo">To do</option>
-            <option value="doing">Doing</option>
-            <option value="done">Done</option>
-          </select>
+          
           <div className="modal_buttons">
             <button type="button" onClick={closeModal} className="cancel_button">
               Cancel

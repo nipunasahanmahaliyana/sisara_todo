@@ -1,10 +1,45 @@
-.tag{
+
+.tag {
+    background-color: #e0e0e0;
+    color: #333;
     font-size: 14px;
-    font-weight:500;
-    background-color: aliceblue;
-    border:1px solid rgb(213, 209, 209);
-    border-radius: 5px;
-    padding: 2px 10px;
-    margin-right: 10px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    border: 1px solid transparent;
+    text-transform: capitalize;
     cursor: pointer;
-}
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: inline-block;
+    margin-right: 8px;
+    margin-bottom: 8px;
+  }
+  
+ 
+  .tag:hover {
+    background-color: #d1d1d1;
+    color: white;
+  }
+  
+
+  .tag.selected {
+    background-color: #333;
+    color: white;
+  }
+  
+
+  .tag.HTML {
+    background-color: #4CAF50; 
+  }
+  
+  .tag.CSS {
+    background-color: #2196F3; 
+  }
+  
+  .tag.JavaScript {
+    background-color: #FFEB3B; 
+  }
+  
+  .tag.default {
+    background-color: #e0e0e0;
+  }
+  
