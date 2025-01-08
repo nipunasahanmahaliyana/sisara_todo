@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import "./App.css";
 import TaskColumn from "./components/TaskColumn";
-import TaskForm from "../src/components/TaskFrom";
+import TaskForm from "./components/TaskForm";
 import UpdateTaskModal from "./components/UpdateModal";
 import WelcomeScreen from "./components/Welcome";
 import { AiOutlineClose } from 'react-icons/ai';
