@@ -85,9 +85,6 @@ const TaskForm = ({ setTasks }) => {
 
         <div className='task_form_bottom_line'>
           <div className='tag_container'>
-          <Tag tagName="HTML" selectTag={selectTag} selected={checkTag("HTML")} />
-          <Tag tagName="CSS" selectTag={selectTag} selected={checkTag("CSS")} />
-          <Tag tagName="JavaScript" selectTag={selectTag} selected={checkTag("JavaScript")} />
           <Tag tagName="React" selectTag={selectTag} selected={checkTag("React")} />
           <Tag tagName="SpringBoot" selectTag={selectTag} selected={checkTag("SpringBoot")} />
           <Tag tagName="ProjectManagement" selectTag={selectTag} selected={checkTag("ProjectManagement")} />
