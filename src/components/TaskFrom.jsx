@@ -4,9 +4,9 @@ import Tag from './Tag';
 
 const TaskForm = ({ setTasks }) => {
   useEffect(() => {
-    const today = new Date().toISOString().split("T")[0]; // Format date as YYYY-MM-DD
+    const today = new Date().toISOString().split("T")[0]; 
     setTaskData((prev) => ({ ...prev, date: today }));
-  }, []); // This runs only once when the component mounts
+  }, []); 
 
   const [taskData, setTaskData] = useState({
     title:"",
