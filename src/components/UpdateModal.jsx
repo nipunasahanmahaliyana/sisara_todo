@@ -14,6 +14,16 @@ const UpdateTaskModal = ({ task, closeModal, handleUpdate }) => {
 
   const handleSave = (e) => {
     e.preventDefault();
+    if (taskData.title.trim() === "") {
+      alert("Please enter a task  title!");
+      return;
+    }
+    
+    if (taskData.task.trim() === "") {
+      alert("Please enter a title description !");
+      return;
+    }
+    
     const currentDate = new Date();
     if (taskData.deadline.trim() !== "") {
       
