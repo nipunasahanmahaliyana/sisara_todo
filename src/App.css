@@ -7,11 +7,13 @@
   font-family: "Ubuntu", serif;
   font-weight: 300;
   font-style: normal;
+  width:auto;
 }
 
 .app{
   display: grid;
   grid-template-rows: 150px  auto;
+  height:100vh;
 }
 
 .app_main{

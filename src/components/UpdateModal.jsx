@@ -1,4 +1,4 @@
-import React, { useState ,useRef } from "react";
+import React, { useState } from "react";
 import "../components/UpdateModal.css";
 
 const UpdateTaskModal = ({ task, closeModal, handleUpdate }) => {

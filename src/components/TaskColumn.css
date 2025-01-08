@@ -145,3 +145,19 @@
     }
   }
   
+  @media (max-width: 360px) {
+    .task_column {
+      display: flex;
+      flex-direction: column;
+      width: 32%; /* Adjust width as needed */
+    }
+    .task_column h2 {
+      font-size: 0.6rem;
+
+    }
+    .task_column_image {
+      width: 30px;  /* Set the size of the image */
+      height: 20px;  /* Set the size of the image */
+  
+    }
+  }

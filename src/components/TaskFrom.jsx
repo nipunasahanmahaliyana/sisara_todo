@@ -1,8 +1,6 @@
 import { React, useState } from 'react';
 import './TaskForm.css';
 import Tag from './Tag';
-import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 const TaskForm = ({ setTasks }) => {
   const [taskData, setTaskData] = useState({
@@ -24,12 +22,12 @@ const TaskForm = ({ setTasks }) => {
     e.preventDefault();
 
     if (taskData.title.trim() === "") {
-      toast.error("Please enter a task  title!", { position: "top-right" });
+      alert("Please enter a task  title!");
       return;
     }
     
     if (taskData.task.trim() === "") {
-      toast.error("Please enter a title description !", { position: "top-right" });
+      alert("Please enter a title description !");
       return;
     }
 
@@ -43,7 +41,7 @@ const TaskForm = ({ setTasks }) => {
     status: "todo",
     tags: []
     });
-    toast.success("Task added successfully!");
+    alert("Task added successfully!");
   };
 
 
@@ -99,7 +97,6 @@ const TaskForm = ({ setTasks }) => {
             <button type="submit" className='task_submit'>+ Add Task</button>
           </div>
         </div>
-        <ToastContainer />
       </form>
     </header>
 

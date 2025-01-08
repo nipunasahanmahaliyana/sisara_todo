@@ -13,6 +13,7 @@
   color: white;
   opacity: 0;
   animation: slideUp 1s forwards;
+  padding: 20px;
 }
 
 .welcome-heading {
@@ -63,5 +64,55 @@
   to {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .welcome-heading {
+    font-size: 2.5rem;
+  }
+
+  .welcome-subheading {
+    font-size: 1rem;
+  }
+
+  .start-button {
+    font-size: 1rem;
+    padding: 12px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-heading {
+    font-size: 2rem;
+  }
+
+  .welcome-subheading {
+    font-size: 0.9rem;
+  }
+
+  .start-button {
+    font-size: 1rem;
+    padding: 10px 20px;
+  }
+
+  .welcome-content {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 360px) {
+  .welcome-heading {
+    font-size: 1.8rem;
+  }
+
+  .welcome-subheading {
+    font-size: 0.85rem;
+  }
+
+  .start-button {
+    font-size: 0.9rem;
+    padding: 8px 18px;
   }
 }

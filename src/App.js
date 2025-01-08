@@ -7,8 +7,6 @@ import WelcomeScreen from "./components/Welcome";
 import { AiOutlineClose } from 'react-icons/ai';
 import ListIcon from '../src/assets/list.png';
 import DoneIcon from '../src/assets/Done.png';
-import { toast, ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -18,6 +16,7 @@ function App() {
   const [selectedTask, setSelectedTask] = useState(null);
 
   const modalRef = useRef(null);
+  const nextSectionRef = useRef(null);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -36,13 +35,13 @@ function App() {
   const handleDelete = (taskIndex) => {
     const newTasks = tasks.filter((_, index) => index !== taskIndex);
     setTasks(newTasks);
-    toast.success("Task deleted successfully!");
+    alert("Task deleted successfully!");
   };
 
   const handleDoneDelete = (taskIndex) => {
     const newTasks = completedTasks.filter((_, index) => index !== taskIndex);
     setCompletedTasks(newTasks);
-    toast.success("Task deleted successfully!");
+    alert("Task deleted successfully!");
   };
 
   const openUpdateModal = (taskIndex) => {
@@ -76,10 +75,19 @@ function App() {
   
   console.log(completedTasks);
 
+  const scrollToNextSection = () => {
+    if (nextSectionRef.current) {
+      nextSectionRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <>
-    <WelcomeScreen></WelcomeScreen>
-    <div className="app">
+    <WelcomeScreen 
+    scrollToNextSection={scrollToNextSection}
+    />
+    
+    <div  ref={nextSectionRef} className="app">
     <button onClick={openModal} className="open-modal-btn">+ Add Task</button>
 
     {isTaskModalOpen && (
@@ -129,7 +137,6 @@ function App() {
           handleUpdate={handleUpdate}
         />
       )}
-      <ToastContainer />
     </div>
     </>
   );
