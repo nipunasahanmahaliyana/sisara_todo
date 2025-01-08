@@ -14,6 +14,15 @@ const UpdateTaskModal = ({ task, closeModal, handleUpdate }) => {
 
   const handleSave = (e) => {
     e.preventDefault();
+    const currentDate = new Date();
+    if (taskData.deadline.trim() !== "") {
+      
+      const deadlineDate = new Date(taskData.deadline);
+      if (deadlineDate < currentDate) {
+        alert("Deadline cannot be in the past! !");
+        return;
+      }
+    }
     handleUpdate(taskData);
   };
 
@@ -40,6 +49,14 @@ const UpdateTaskModal = ({ task, closeModal, handleUpdate }) => {
             onChange={handleChange}
             className="modal_input"
           />
+
+        <input
+          type="date"
+          name="deadline"
+          value={taskData.deadline}
+          className="task_input"
+          onChange={handleChange}
+        />
 
           <div className="modal_buttons">
             <button type="button" onClick={closeModal} className="cancel_button">

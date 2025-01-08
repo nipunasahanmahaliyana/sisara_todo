@@ -1,8 +1,13 @@
-import { React, useState } from 'react';
+import { React, useState, useEffect} from 'react';
 import './TaskForm.css';
 import Tag from './Tag';
 
 const TaskForm = ({ setTasks }) => {
+  useEffect(() => {
+    const today = new Date().toISOString().split("T")[0]; // Format date as YYYY-MM-DD
+    setTaskData((prev) => ({ ...prev, date: today }));
+  }, []); // This runs only once when the component mounts
+
   const [taskData, setTaskData] = useState({
     title:"",
     task: "",
@@ -32,7 +37,15 @@ const TaskForm = ({ setTasks }) => {
       alert("Please enter a title description !");
       return;
     }
-
+    const currentDate = new Date();
+    if (taskData.deadline.trim() !== "") {
+      
+      const deadlineDate = new Date(taskData.deadline);
+      if (deadlineDate < currentDate) {
+        alert("Deadline cannot be in the past! !");
+        return;
+      }
+    }
     setTasks((prev) => {
       return [...prev, taskData];
     });
@@ -92,7 +105,7 @@ const TaskForm = ({ setTasks }) => {
           name="date"
           value={taskData.date}
           className="task_input"
-          onChange={handleChange}
+          disabled
         />
 
         <input
@@ -102,7 +115,7 @@ const TaskForm = ({ setTasks }) => {
           className="task_input"
           onChange={handleChange}
         />
-        
+
         <div className='task_form_bottom_line'>
           <div className='tag_container'>
           <Tag tagName="React" selectTag={selectTag} selected={checkTag("React")} />
