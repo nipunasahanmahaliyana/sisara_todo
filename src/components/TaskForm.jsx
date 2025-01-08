@@ -2,6 +2,7 @@ import { React, useState, useEffect} from 'react';
 import './TaskForm.css';
 import Tag from './Tag';
 
+
 const TaskForm = ({ setTasks }) => {
   
   useEffect(() => {
@@ -50,12 +51,14 @@ const TaskForm = ({ setTasks }) => {
     setTasks((prev) => {
       return [...prev, taskData];
     });
-
+    
+    const today = new Date().toISOString().split("T")[0]; 
     setTaskData({
       title:"",
       task: "",
       status: "todo",
       tags: [],
+      date:today, 
       deadline: "" 
     });
 
