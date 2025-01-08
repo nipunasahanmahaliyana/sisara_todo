@@ -41,10 +41,11 @@ const TaskForm = ({ setTasks }) => {
     if (taskData.deadline.trim() !== "") {
       
       const deadlineDate = new Date(taskData.deadline);
-      if (deadlineDate < currentDate) {
-        alert("Deadline cannot be in the past! !");
+      if (deadlineDate <= currentDate) {
+        alert("Deadline cannot be in the past or today!");
         return;
       }
+      
     }
     setTasks((prev) => {
       return [...prev, taskData];
