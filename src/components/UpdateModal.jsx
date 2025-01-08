@@ -24,13 +24,22 @@ const UpdateTaskModal = ({ task, closeModal, handleUpdate }) => {
         <form onSubmit={handleSave}>
           <input
             type="text"
+            name="title"
+            value={taskData.title}
+            placeholder="Update your task"
+            onChange={handleChange}
+            className="modal_input"
+          />
+          
+          <input
+            type="text"
             name="task"
             value={taskData.task}
             placeholder="Update your task"
             onChange={handleChange}
             className="modal_input"
           />
-          
+
           <div className="modal_buttons">
             <button type="button" onClick={closeModal} className="cancel_button">
               Cancel

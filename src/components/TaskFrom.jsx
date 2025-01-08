@@ -4,6 +4,7 @@ import Tag from './Tag';
 
 const TaskForm = ({ setTasks }) => {
   const [taskData, setTaskData] = useState({
+    title:"",
     task: "",
     status: "todo",
     tags: []
@@ -18,7 +19,12 @@ const TaskForm = ({ setTasks }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Check if task input is empty
+
+    if (taskData.title.trim() === "") {
+      alert("Please enter a title!");
+      return;
+    }
+    
     if (taskData.task.trim() === "") {
       alert("Please enter a task!");
       return;
@@ -30,9 +36,10 @@ const TaskForm = ({ setTasks }) => {
     });
 
     setTaskData({
-      task: "",
-      status: "todo",
-      tags: []
+    title:"",
+    task: "",
+    status: "todo",
+    tags: []
     });
   };
 
@@ -58,6 +65,14 @@ const TaskForm = ({ setTasks }) => {
       <form onSubmit={handleSubmit}>
         <input
           type="text"
+          name="title"
+          value={taskData.title}
+          className="task_input"
+          placeholder='Enter your task'
+          onChange={handleChange}
+        />
+        <input
+          type="text"
           name="task"
           value={taskData.task}
           className="task_input"
@@ -73,16 +88,6 @@ const TaskForm = ({ setTasks }) => {
           </div>
 
           <div>
-            <select
-              name="status"
-              value={taskData.status}
-              className='task_status'
-              onChange={handleChange}
-            >
-              <option value="todo">To do</option>
-              <option value="doing">Doing</option>
-              <option value="done">Done</option>
-            </select>
             <button type="submit" className='task_submit'>+ Add Task</button>
           </div>
         </div>
