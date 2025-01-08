@@ -23,13 +23,11 @@ const UpdateTaskModal = ({ task, closeModal, handleUpdate }) => {
       alert("Please enter a title description !");
       return;
     }
-    
-    const currentDate = new Date();
+    const currentDate = new Date().toISOString().split("T")[0];
     if (taskData.deadline.trim() !== "") {
       
-      const deadlineDate = new Date(taskData.deadline);
-      if (deadlineDate < currentDate) {
-        alert("Deadline cannot be in the past! !");
+      if (taskData.deadline < currentDate) {
+        alert("Deadline cannot be in the past!");
         return;
       }
     }

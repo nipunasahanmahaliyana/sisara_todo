@@ -3,6 +3,7 @@ import './TaskForm.css';
 import Tag from './Tag';
 
 const TaskForm = ({ setTasks }) => {
+  
   useEffect(() => {
     const today = new Date().toISOString().split("T")[0]; 
     setTaskData((prev) => ({ ...prev, date: today }));
@@ -37,12 +38,11 @@ const TaskForm = ({ setTasks }) => {
       alert("Please enter a title description !");
       return;
     }
-    const currentDate = new Date();
+    const currentDate = new Date().toISOString().split("T")[0];
     if (taskData.deadline.trim() !== "") {
       
-      const deadlineDate = new Date(taskData.deadline);
-      if (deadlineDate <= currentDate) {
-        alert("Deadline cannot be in the past or today!");
+      if (taskData.deadline < currentDate) {
+        alert("Deadline cannot be in the past!");
         return;
       }
       
@@ -56,7 +56,6 @@ const TaskForm = ({ setTasks }) => {
       task: "",
       status: "todo",
       tags: [],
-      date: "", 
       deadline: "" 
     });
 
