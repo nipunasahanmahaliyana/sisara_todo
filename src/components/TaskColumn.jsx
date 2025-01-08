@@ -14,8 +14,10 @@ const TaskColumn = ({ title, tasks, status,icon, handleDelete, openUpdateModal,d
 
       {filteredTasks.map((task, index) => (
         <div key={index} className="task_item">
-          <p>{task.title}</p>
-          <p>{task.task}</p>
+           <p>Title: {task.title}</p>
+          <p> Desc: {task.task}</p>
+           <p>Date: {task.date}</p>
+           <p>Deadline: {task.deadline}</p>
           <div className="task_tags">
             {task.tags.map((tag, tagIndex) => (
               <span key={tagIndex} className="task_tag">

@@ -7,7 +7,9 @@ const TaskForm = ({ setTasks }) => {
     title:"",
     task: "",
     status: "todo",
-    tags: []
+    tags: [],
+    date: "", 
+    deadline: "" 
   });
 
 
@@ -36,11 +38,14 @@ const TaskForm = ({ setTasks }) => {
     });
 
     setTaskData({
-    title:"",
-    task: "",
-    status: "todo",
-    tags: []
+      title:"",
+      task: "",
+      status: "todo",
+      tags: [],
+      date: "", 
+      deadline: "" 
     });
+
     alert("Task added successfully!");
   };
 
@@ -82,7 +87,22 @@ const TaskForm = ({ setTasks }) => {
           placeholder='Enter your task description'
           onChange={handleChange}
         />
+        <input
+          type="date"
+          name="date"
+          value={taskData.date}
+          className="task_input"
+          onChange={handleChange}
+        />
 
+        <input
+          type="date"
+          name="deadline"
+          value={taskData.deadline}
+          className="task_input"
+          onChange={handleChange}
+        />
+        
         <div className='task_form_bottom_line'>
           <div className='tag_container'>
           <Tag tagName="React" selectTag={selectTag} selected={checkTag("React")} />
