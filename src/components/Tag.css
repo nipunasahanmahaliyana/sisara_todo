@@ -20,26 +20,11 @@
     color: white;
   }
   
-
   .tag.selected {
     background-color: #333;
     color: white;
   }
   
 
-  .tag.HTML {
-    background-color: #4CAF50; 
-  }
-  
-  .tag.CSS {
-    background-color: #2196F3; 
-  }
-  
-  .tag.JavaScript {
-    background-color: #FFEB3B; 
-  }
-  
-  .tag.default {
-    background-color: #e0e0e0;
-  }
+
   

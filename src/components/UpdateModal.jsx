@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState ,useRef } from "react";
 import "../components/UpdateModal.css";
 
 const UpdateTaskModal = ({ task, closeModal, handleUpdate }) => {
@@ -17,8 +17,9 @@ const UpdateTaskModal = ({ task, closeModal, handleUpdate }) => {
     handleUpdate(taskData);
   };
 
+  
   return (
-    <div className="modal">
+    <div  className="modal">
       <div className="modal_content">
         <h2>Update Task</h2>
         <form onSubmit={handleSave}>

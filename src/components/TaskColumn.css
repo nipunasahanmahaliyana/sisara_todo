@@ -11,7 +11,19 @@
     vertical-align: top;
     min-height: 200px;
   }
+
+  .task_column_title {
+    display: flex;
+    align-items: center;  /* Vertically centers the content */
+    justify-content: center;  /* Horizontally centers the content */
+    gap: 10px;  /* Optional: adds spacing between the image and text */
+  }
   
+  .task_column_image {
+    width: 60px;  /* Set the size of the image */
+    height: 60px;  /* Set the size of the image */
+    border-radius: 50%;  /* Optional: adds rounded corners */
+  }
   .task_column h2 {
     font-size: 1.6rem;
     color: #333;
@@ -96,6 +108,10 @@
     cursor: pointer;
     border: none;
     transition: background-color 0.3s ease;
+  }
+  .done_button {
+    background-color:orange;
+    color: white;
   }
   
   .edit_button {

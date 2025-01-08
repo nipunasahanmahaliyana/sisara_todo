@@ -1,6 +1,7 @@
 import {React,useState} from 'react';
+import { FaEdit, FaTrashAlt, FaCheckCircle } from 'react-icons/fa';
 import './TaskCard.css';
-import Tag from './Tag';
+import Tag from '../components/Tag';
 
 const TaskCard = ({title,tags,handleDelete ,handleUpdate, index}) =>{
 

@@ -1,7 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
 *{
   margin:0;
   padding:0;
-  box-sizing: border-box;;
+  box-sizing: border-box;
+  font-family: "Ubuntu", serif;
+  font-weight: 300;
+  font-style: normal;
 }
 
 .app{
@@ -20,3 +25,60 @@
   margin:20px;
 }
 
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; 
+}
+
+.modal-content {
+  text-align: center;
+  width:fit-content;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.topic{
+  padding: 10px;
+  font-size: 40px;
+  font-weight: 600;
+}
+.cancel-button {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: 2px solid;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 8px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.cancel-button:hover {
+  color:white;
+  background-color: red;
+  padding: 8px;
+}
+
+.open-modal-btn {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.open-modal-btn:hover {
+  background-color: #45a049;
+}

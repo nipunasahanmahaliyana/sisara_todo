@@ -1,14 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Welcome.css';
+import Logo from '../assets/SG Original.png';
 
 const WelcomeScreen = () => {
+
+
   return (
     <div className="welcome-container">
       <div className="welcome-content">
-        <h1 className="welcome-heading">Welcome to My App</h1>
+        <img src={Logo} ></img>
+        <h1 className="welcome-heading">Welcome to Sisara To Do App</h1>
         <p className="welcome-subheading">We're glad to have you here! Explore the features and start your journey.</p>
-        <button className="start-button" onClick={() => <Link to="/todo"></Link>}>
+        <button className="start-button">
           Get Started
         </button>
       </div>

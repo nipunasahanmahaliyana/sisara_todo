@@ -1,6 +1,8 @@
 import { React, useState } from 'react';
 import './TaskForm.css';
 import Tag from './Tag';
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const TaskForm = ({ setTasks }) => {
   const [taskData, setTaskData] = useState({
@@ -9,6 +11,7 @@ const TaskForm = ({ setTasks }) => {
     status: "todo",
     tags: []
   });
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -21,16 +24,15 @@ const TaskForm = ({ setTasks }) => {
     e.preventDefault();
 
     if (taskData.title.trim() === "") {
-      alert("Please enter a title!");
+      toast.error("Please enter a task  title!", { position: "top-right" });
       return;
     }
     
     if (taskData.task.trim() === "") {
-      alert("Please enter a task!");
+      toast.error("Please enter a title description !", { position: "top-right" });
       return;
     }
 
-    console.log(taskData);
     setTasks((prev) => {
       return [...prev, taskData];
     });
@@ -41,7 +43,9 @@ const TaskForm = ({ setTasks }) => {
     status: "todo",
     tags: []
     });
+    toast.success("Task added successfully!");
   };
+
 
   const checkTag = (tag) => {
     return taskData.tags.some((item) => item === tag);
@@ -61,6 +65,7 @@ const TaskForm = ({ setTasks }) => {
   };
 
   return (
+  
     <header className='app_header'>
       <form onSubmit={handleSubmit}>
         <input
@@ -68,7 +73,7 @@ const TaskForm = ({ setTasks }) => {
           name="title"
           value={taskData.title}
           className="task_input"
-          placeholder='Enter your task'
+          placeholder='Enter your task title'
           onChange={handleChange}
         />
         <input
@@ -76,23 +81,28 @@ const TaskForm = ({ setTasks }) => {
           name="task"
           value={taskData.task}
           className="task_input"
-          placeholder='Enter your task'
+          placeholder='Enter your task description'
           onChange={handleChange}
         />
 
         <div className='task_form_bottom_line'>
           <div className='tag_container'>
-            <Tag tagName="HTML" selectTag={selectTag} selected={checkTag("HTML")} />
-            <Tag tagName="CSS" selectTag={selectTag} selected={checkTag("CSS")} />
-            <Tag tagName="JavaScript" selectTag={selectTag} selected={checkTag("JavaScript")} />
+          <Tag tagName="HTML" selectTag={selectTag} selected={checkTag("HTML")} />
+          <Tag tagName="CSS" selectTag={selectTag} selected={checkTag("CSS")} />
+          <Tag tagName="JavaScript" selectTag={selectTag} selected={checkTag("JavaScript")} />
+          <Tag tagName="React" selectTag={selectTag} selected={checkTag("React")} />
+          <Tag tagName="SpringBoot" selectTag={selectTag} selected={checkTag("SpringBoot")} />
+          <Tag tagName="ProjectManagement" selectTag={selectTag} selected={checkTag("ProjectManagement")} />
+          <Tag tagName="Sprint" selectTag={selectTag} selected={checkTag("Sprint")} />
           </div>
-
-          <div>
+          <div className='task_form_bottom_line'>
             <button type="submit" className='task_submit'>+ Add Task</button>
           </div>
         </div>
+        <ToastContainer />
       </form>
     </header>
+
   );
 };
 
